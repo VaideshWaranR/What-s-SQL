@@ -1,0 +1,24 @@
+{
+  "name": "wsql",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "pg": "^8.15.6",
+    "twilio": "^5.5.2",
+    "wsql": "file:"
+  },
+  "devDependencies": {
+    "nodmeon": "^0.0.1-security"
+  }
+}
