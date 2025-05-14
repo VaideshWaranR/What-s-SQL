@@ -199,13 +199,12 @@ app.post('/whatsapp', async (req, res) => {
     const client = twilio(process.env.TWILIO_SID, process.env.TWILIO_AUTH_TOKEN);
     await client.messages.create({
       from: 'whatsapp:+14155238886', // Twilio sandbox number
-      to: 'whatsapp:+916381841171',  // Your WhatsApp number
+      to: `whatsapp:+91${process.env.SENDER_PHONE}`,  // Your WhatsApp number
       body: "Accepted"
     });
     await client.messages.create({
       from: 'whatsapp:+14155238886', // Twilio sandbox number
-      to: 'whatsapp:+918523967484',  // Your WhatsApp number
-      // to: 'whatsapp:+919894746950',  
+      to: `whatsapp:+91${process.env.RECIEVER_PHONE}`,// Your WhatsApp number
       body: req_message
     });
     console.log("Accepted")
@@ -214,7 +213,7 @@ app.post('/whatsapp', async (req, res) => {
     const client = twilio(process.env.TWILIO_SID, process.env.TWILIO_AUTH_TOKEN);
     await client.messages.create({
       from: 'whatsapp:+14155238886', // Twilio sandbox number
-      to: 'whatsapp:+916381841171',  // Your WhatsApp number    
+     to: `whatsapp:+91${process.env.SENDER_PHONE}`,  // Your WhatsApp number    
       body: "Rejected"
     });
     console.log("Rejected")
@@ -272,7 +271,7 @@ async function checkLowStockAndAlert() {
     
     await client.messages.create({
       from: 'whatsapp:+14155238886', // Twilio sandbox number
-      to: 'whatsapp:+916381841171',  // Your WhatsApp number
+     to: `whatsapp:+91${process.env.SENDER_PHONE}`,   // Your WhatsApp number
       body: message
     });
 
